@@ -3,14 +3,13 @@ package com.rossstores.pages;
 
 import com.rossstores.driver.DriverManager;
 import io.qameta.allure.Allure;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
+import static com.rossstores.constants.FrameworkConstants.getCreditCardUrl;
 import static com.rossstores.constants.FrameworkConstants.getStoreLocatorUrl;
+import static com.rossstores.utils.JSUtils.scrollIntoViewJS;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 
@@ -23,10 +22,8 @@ public class StoreLocatorPage extends BasePage {
             super(driver);
         }
 
-    @FindBy(xpath = "//li[@id='menu-item-19']//a[@href='https://www.ddsdiscounts.com/store-locator/']")
-    private WebElement navMenuStoreLocator;
-    @FindBy(xpath = "//iframe[@id='iframe-store-locator']")
-    private WebElement iframeStoreLocator;
+        @FindBy(xpath = "//iframe[@id='iframe-store-locator']")
+        private WebElement iframeStoreLocator;
 
 
         public StoreLocatorPage  verifyStoreLocatorPage() throws InterruptedException {
@@ -40,17 +37,20 @@ public class StoreLocatorPage extends BasePage {
             sendESC.sendKeys(Keys.ESCAPE);
 
 
-            Assert.assertEquals(DriverManager.getDriver().getCurrentUrl(), "https://www.ddsdiscounts.com/store-locator/");
+            Assert.assertEquals(DriverManager.getDriver().getCurrentUrl(), "https://www.rossstores.com/store-locator/");
             assertThat(DriverManager.getDriver().getTitle(), containsString("Store Locator"));
             System.out.println("Store Locator Page url and tittle asserted ");
 
 //            scrollIntoViewJS(iframeStoreLocator);
 //            driver.switchTo().frame(iframeStoreLocator);
 //
+//            boolean storeLocatorFrame = iframeStoreLocator.isDisplayed();
+//            System.out.println("map is displayed " + storeLocatorFrame);
+
 //            driver.findElement(By.id("inputaddress")).clear();
 //            //result by zipcode
 //            driver.findElement(By.id("inputaddress")).sendKeys("78613");
-//            driver.findElement(By.id("locator_submit")).click();
+//            driver.findElement(By.xpath("//div[@id='submit-container']//input[@id='search_button']")).click();
 //            Thread.sleep(2000);
 //
 //            Boolean panelDisplayed = driver.findElement(By.id("panel")).isDisplayed();
@@ -64,4 +64,16 @@ public class StoreLocatorPage extends BasePage {
             return this;
 
         }
+
+    public CreditCardPage navigateToCreditCardPage() throws InterruptedException {
+        Allure.step("The user navigate to Credit Card Page");
+
+        navigateTo_URL(getCreditCardUrl());
+        Thread.sleep(2000);
+
+//        WebElement sendESC = driver.findElement(By.tagName("body"));
+//        sendESC.sendKeys(Keys.ESCAPE);
+
+        return new CreditCardPage(driver);
+    }
 }

@@ -26,21 +26,14 @@ public class FoundInStorePage extends BasePage {
     private WebElement footerSignInModalWindow;
     @FindBy(xpath = "//div[@id='mainfooter']")
     private WebElement pageFooter;
-    @FindBy(xpath = "//button[@id='stackla-filter-toggle']")
-    private WebElement foundIStoreSelectCategory;
-    @FindBy(xpath = "//button[@data-filterslug='men']")
-    private WebElement categoryMen;
-    @FindBy(xpath = "//button[@data-filterslug='ladies']")
-    private WebElement categoryLadies;
-    @FindBy(xpath = "//button[@data-filterslug='kids']")
-    private WebElement categoryKids;
-    @FindBy(xpath = "//button[@data-filterslug='shoes']")
-    private WebElement categoryShoes;
-    @FindBy(xpath = "//ul[@class='dropdown-menu show']//button[@data-filterslug='for-the-home']")
+
+    @FindBy(xpath = "//button[contains(text(),'Lifestyle')]")
+    private WebElement categoryLifestyle;
+    @FindBy(xpath = "//button[contains(text(),'Home')]")
     private WebElement categoryHome;
-    @FindBy(xpath = "//ul[@class='dropdown-menu show']//button[@data-filterslug='more']")
-    private WebElement categoryMore;
-    @FindBy(xpath = "//button[@data-filterslug='view-all']")
+    @FindBy(xpath = "//button[contains(text(),'Fashion')]")
+    private WebElement categoryFashion;
+    @FindBy(xpath = "//button[contains(text(),'View All')]")
     private WebElement categoryAll;
 
 //    @FindBy(xpath = "//div[@id='onetrust-pc-sdk']//button[@id='close-pc-btn-handler']")
@@ -58,8 +51,8 @@ public class FoundInStorePage extends BasePage {
         Thread.sleep(2000);
         WebElement sendESC = driver.findElement(By.tagName("body"));
         sendESC.sendKeys(Keys.ESCAPE);
-        Assert.assertEquals(DriverManager.getDriver().getCurrentUrl(), "https://www.ddsdiscounts.com/found-in-store/");
-        assertThat(DriverManager.getDriver().getTitle(), containsString("Found In Store"));
+        Assert.assertEquals(DriverManager.getDriver().getCurrentUrl(), "https://www.rossstores.com/found-in-store/");
+        assertThat(DriverManager.getDriver().getTitle(), containsString("Found in Store | Ross Dress for Less"));
 
         //jsScrollClick(closeCookieButton);
 
@@ -74,10 +67,10 @@ public class FoundInStorePage extends BasePage {
         navigateTo_URL(getFoundInStoreUrl());
         Thread.sleep(2000);
 
-        boolean realDealsText = driver.findElement(By.xpath("//p[contains(text(),'Real deals found in our stores for you, your famil')]")).isDisplayed();
-        System.out.println( " realDealsText is displayed " + realDealsText);
-        boolean allMerchandiseText = driver.findElement(By.xpath("//p[contains(text(),'All merchandise is representative of the merchandi')]")).isDisplayed();
-        System.out.println( " allMerchandiseText is displayed " + allMerchandiseText);
+        boolean pageTittle = driver.findElement(By.xpath("//span[contains(text(),'Found In-Store')]")).isDisplayed();
+        System.out.println( " page Tittle is displayed " + pageTittle);
+        boolean foundInStoreText = driver.findElement(By.xpath("//p[contains(text(),'Love it? Share it! Tag your latest Ross finds on Instagram.')]")).isDisplayed();
+        System.out.println( " foundInStore Text is displayed " + foundInStoreText);
         boolean signInModalFooter = footerSignInModalWindow.isDisplayed();
         System.out.println("footer SignIn Modal Window is displayed " + signInModalFooter);
         boolean displayFooter = pageFooter.isDisplayed();
@@ -88,20 +81,14 @@ public class FoundInStorePage extends BasePage {
         return this;
 
         }
-    public FoundInStorePage clickFoundInStoreSelectAllFromDropdown() throws InterruptedException {
+    public FoundInStorePage clickFoundInStoreSelectAllImages() throws InterruptedException {
 
         Allure.step("The user Select ALL from dropdown Menu");
 
         navigateTo_URL(getFoundInStoreUrl());
         Thread.sleep(2000);
 
-        boolean dropDownMenuDisplayed = foundIStoreSelectCategory.isDisplayed();
-        System.out.println("Dropdownmenu -All- is displayed " + dropDownMenuDisplayed);
-        click(foundIStoreSelectCategory);
-        Thread.sleep(1000);
-
-        WebElement selectAllDropDown = categoryAll;
-        selectAllDropDown.click();
+        jsScrollClick(categoryAll);
         Thread.sleep(4000);
 
         driver.switchTo().frame(0);
@@ -116,7 +103,7 @@ public class FoundInStorePage extends BasePage {
         File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 
         // Specify the destination path
-         String destinationPath = "src/test/screenshots/ScreenshotForSelectedAll.png";
+         String destinationPath = "src/test/java/screenshots/ScreenshotForSelectedAll.png";
 
          try {
               //Save the screenshot to the specified path
@@ -138,19 +125,14 @@ public class FoundInStorePage extends BasePage {
 
     }
 
-    public FoundInStorePage clickFoundInStoreSelectMenFromDropdown() throws InterruptedException {
+    public FoundInStorePage clickFoundInStoreSelectFashionImages() throws InterruptedException {
 
-        Allure.step("The user Select ALL from dropdown Menu");
+        Allure.step("The user Select fashion from dropdown Menu");
 
         navigateTo_URL(getFoundInStoreUrl());
         Thread.sleep(2000);
 
-        boolean dropDownMenuDisplayed = foundIStoreSelectCategory.isDisplayed();
-        System.out.println("Dropdownmenu  -Men- is displayed " + dropDownMenuDisplayed);
-        click(foundIStoreSelectCategory);
-        Thread.sleep(1000);
-
-        WebElement selectMenDropDown = categoryMen;
+        WebElement selectMenDropDown = categoryFashion;
         selectMenDropDown.click();
         Thread.sleep(4000);
 
@@ -161,12 +143,12 @@ public class FoundInStorePage extends BasePage {
         Thread.sleep(2000);
 
         boolean menImageDisplayed = driver.findElement(By.xpath("//html")).isDisplayed();
-        System.out.println("Men Image preview displayed " + menImageDisplayed );
+        System.out.println("fashion Image preview displayed " + menImageDisplayed );
 
         File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 
         // Specify the destination path
-        String destinationPath = "src/test/screenshots/ScreenshotForSelectedMen.png";
+        String destinationPath = "src/test/java/screenshots/ScreenshotForSelectedFashion.png";
 
         try {
             //Save the screenshot to the specified path
@@ -188,19 +170,14 @@ public class FoundInStorePage extends BasePage {
 
     }
 
-    public FoundInStorePage clickFoundInStoreSelectLadiesFromDropdown() throws InterruptedException {
+    public FoundInStorePage clickFoundInStoreSelectHomeImages() throws InterruptedException {
 
-        Allure.step("The user Select ALL from dropdown Menu");
+        Allure.step("The user Select home from  Menu");
 
         navigateTo_URL(getFoundInStoreUrl());
         Thread.sleep(2000);
 
-        boolean dropDownMenuDisplayed = foundIStoreSelectCategory.isDisplayed();
-        System.out.println("Dropdownmenu -Ladies-  is displayed " + dropDownMenuDisplayed);
-        click(foundIStoreSelectCategory);
-        Thread.sleep(1000);
-
-        WebElement selectLadiesDropDown = categoryLadies;
+        WebElement selectLadiesDropDown = categoryHome;
         selectLadiesDropDown.click();
         Thread.sleep(4000);
 
@@ -211,12 +188,12 @@ public class FoundInStorePage extends BasePage {
         Thread.sleep(2000);
 
         boolean ladiesImageDisplayed = driver.findElement(By.xpath("//html")).isDisplayed();
-        System.out.println("ladies Image preview displayed " + ladiesImageDisplayed );
+        System.out.println("home Image preview displayed " + ladiesImageDisplayed );
 
         File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 
         // Specify the destination path
-        String destinationPath = "src/test/screenshots/ScreenshotForSelectedLadies.png";
+        String destinationPath = "src/test/java/screenshots/ScreenshotForSelectedHome.png";
 
         try {
             //Save the screenshot to the specified path
@@ -234,19 +211,15 @@ public class FoundInStorePage extends BasePage {
 
     }
 
-    public FoundInStorePage clickFoundInStoreSelectShoesFromDropdown() throws InterruptedException {
+    public FoundInStorePage clickFoundInStoreSelectLifestyleImages() throws InterruptedException {
 
-        Allure.step("The user Select ALL from dropdown Menu");
+        Allure.step("The user Select lifestyle from  Menu");
 
         navigateTo_URL(getFoundInStoreUrl());
         Thread.sleep(2000);
 
-        boolean dropDownMenuDisplayed = foundIStoreSelectCategory.isDisplayed();
-        System.out.println("Dropdownmenu -shoes- is displayed " + dropDownMenuDisplayed);
-        click(foundIStoreSelectCategory);
-        Thread.sleep(1000);
 
-        WebElement selectShoesDropDown = categoryShoes;
+        WebElement selectShoesDropDown = categoryLifestyle;
         selectShoesDropDown.click();
         Thread.sleep(4000);
 
@@ -257,12 +230,12 @@ public class FoundInStorePage extends BasePage {
         Thread.sleep(2000);
 
         boolean shoesImageDisplayed = driver.findElement(By.xpath("//html")).isDisplayed();
-        System.out.println("Shoes Image preview displayed " + shoesImageDisplayed );
+        System.out.println("lifestyle Image preview displayed " + shoesImageDisplayed );
 
         File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 
         // Specify the destination path
-        String destinationPath = "src/test/screenshots/ScreenshotForSelectedShoes.png";
+        String destinationPath = "src/test/java/screenshots/ScreenshotForSelectedLifestyle.png";
 
         try {
             //Save the screenshot to the specified path
@@ -280,150 +253,6 @@ public class FoundInStorePage extends BasePage {
 
     }
 
-    public FoundInStorePage clickFoundInStoreSelectKidsFromDropdown() throws InterruptedException {
-
-        Allure.step("The user Select ALL from dropdown Menu");
-
-        navigateTo_URL(getFoundInStoreUrl());
-        Thread.sleep(2000);
-
-        boolean dropDownMenuDisplayed = foundIStoreSelectCategory.isDisplayed();
-        System.out.println("Dropdownmenu -Kids- is displayed " + dropDownMenuDisplayed);
-        click(foundIStoreSelectCategory);
-        Thread.sleep(1000);
-
-        WebElement selectKidsDropDown = categoryKids;
-        selectKidsDropDown.click();
-        Thread.sleep(4000);
-
-        driver.switchTo().frame(0);
-        Thread.sleep(1000);
-        WebElement clickImage = driver.findElement(By.xpath("//div[@class='tile-image-wrapper']"));
-        jsScrollClick(clickImage);
-        Thread.sleep(2000);
-
-        boolean kidsImageDisplayed = driver.findElement(By.xpath("//html")).isDisplayed();
-        System.out.println("Kids Image preview displayed " + kidsImageDisplayed );
-
-        File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-
-        // Specify the destination path
-        String destinationPath = "src/test/screenshots/ScreenshotForSelectedKids.png";
-
-        try {
-            //Save the screenshot to the specified path
-            FileUtils.copyFile(screenshotFile, new File(destinationPath));
-            System.out.println("Screenshot saved to: " + destinationPath);
-        } catch (Exception e) {
-            System.out.println("Failed to save screenshot: " + e.getMessage());
-        }
-
-
-        WebElement sendESC = driver.findElement(By.tagName("body"));
-        sendESC.sendKeys(Keys.ESCAPE);
-
-        return this;
-
-    }
-
-    public FoundInStorePage clickFoundInStoreSelectHomeFromDropdown() throws InterruptedException {
-
-        Allure.step("The user Select ALL from dropdown Menu");
-
-        navigateTo_URL(getFoundInStoreUrl());
-        Thread.sleep(2000);
-
-        Thread.sleep(1000);
-        boolean dropDownMenuDisplayed = foundIStoreSelectCategory.isDisplayed();
-        System.out.println("Dropdownmenu - Home -  is displayed " + dropDownMenuDisplayed);
-        jsScrollClick(foundIStoreSelectCategory);
-        Thread.sleep(1000);
-
-        JavascriptExecutor jsexecutor = (JavascriptExecutor) DriverManager.getDriver();
-        jsexecutor.executeScript("window.scrollBy(0, 300)");
-
-        WebElement selectHomeDropDown = categoryHome;
-        selectHomeDropDown.click();
-        Thread.sleep(2000);
-
-        driver.switchTo().frame(0);
-        Thread.sleep(1000);
-        WebElement clickImage = driver.findElement(By.xpath("//div[@class='tile-image-wrapper']"));
-        jsScrollClick(clickImage);
-        Thread.sleep(2000);
-
-        boolean homeImageDisplayed = driver.findElement(By.xpath("//html")).isDisplayed();
-        System.out.println("Home Image preview displayed " + homeImageDisplayed );
-
-        File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-
-        // Specify the destination path
-        String destinationPath = "src/test/screenshots/ScreenshotForSelectedHome.png";
-
-        try {
-            //Save the screenshot to the specified path
-            FileUtils.copyFile(screenshotFile, new File(destinationPath));
-            System.out.println("Screenshot saved to: " + destinationPath);
-        } catch (Exception e) {
-            System.out.println("Failed to save screenshot: " + e.getMessage());
-        }
-
-
-        WebElement sendESC = driver.findElement(By.tagName("body"));
-        sendESC.sendKeys(Keys.ESCAPE);
-
-        return this;
-
-    }
-
-    public FoundInStorePage clickFoundInStoreSelectMoreFromDropdown() throws InterruptedException {
-
-        Allure.step("The user Select ALL from dropdown Menu");
-
-        navigateTo_URL(getFoundInStoreUrl());
-        Thread.sleep(2000);
-
-        boolean dropDownMenuDisplayed = foundIStoreSelectCategory.isDisplayed();
-        System.out.println("Dropdownmenu - more -  is displayed " + dropDownMenuDisplayed);
-        jsScrollClick(foundIStoreSelectCategory);
-        Thread.sleep(3000);
-
-        JavascriptExecutor jsexecutor = (JavascriptExecutor) DriverManager.getDriver();
-        jsexecutor.executeScript("window.scrollBy(0, 500)");
-
-        WebElement selectMoreDropDown = categoryMore;
-        selectMoreDropDown.click();
-        Thread.sleep(4000);
-
-        driver.switchTo().frame(0);
-        Thread.sleep(2000);
-        WebElement clickImage = driver.findElement(By.xpath("//div[@class='tile-image-wrapper']"));
-        jsScrollClick(clickImage);
-        Thread.sleep(2000);
-
-        boolean moreImageDisplayed = driver.findElement(By.xpath("//html")).isDisplayed();
-        System.out.println("More Image preview displayed " + moreImageDisplayed );
-
-        File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-
-        // Specify the destination path
-        String destinationPath = "src/test/screenshots/ScreenshotForSelectedMore.png";
-
-        try {
-            //Save the screenshot to the specified path
-            FileUtils.copyFile(screenshotFile, new File(destinationPath));
-            System.out.println("Screenshot saved to: " + destinationPath);
-        } catch (Exception e) {
-            System.out.println("Failed to save screenshot: " + e.getMessage());
-        }
-
-
-        WebElement sendESC = driver.findElement(By.tagName("body"));
-        sendESC.sendKeys(Keys.ESCAPE);
-
-        return this;
-
-    }
 
     public StoreLocatorPage navigateToStoreLocatorPage() throws InterruptedException {
         Allure.step("The user navigate to StoreLocator page");

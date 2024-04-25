@@ -18,16 +18,19 @@ public class RossStores extends BaseTest{
         homePage
                 .verifySignInModalWindowDisplay()
                 //.closeCookie ()
-                //.verifyHomePageTextsAndTittle()
+                .verifyHomePageTextsAndTittle()
                 .verifyHomePageLogoAndImage()
                 .footerLinksList()
                 .allLinksOnHomePage()
                 .navMenuList()
-                .verifySocialLinksEmailSignUpl()
+                .verifyModule2LearnMoreButton()
+                .verifyModule2ShopGiftCardButton()
+                .verifyModule2ApplyTodayButton()
+                .verifyGetInspiredButton()
+                .verifySocialLinksEmailSignUp()
                 .verifySocialLinksEmailUnsubcribe()
                 .verifySocialLinksInstagram()
                 .verifySocialLinksFacebook()
-                .verifySocialLinksTiktok()
                 .clickFooterAboutUsLinksAndVerifyUrlAndTittle()
                 .clickFooterCareersPageAndVerifyUrlAndTittle()
                 .clickFooterSocialResponsibilityPageAndVerifyUrlAndTittle()
@@ -41,10 +44,13 @@ public class RossStores extends BaseTest{
                 .clickFooterSitemapLinksAndVerifyUrlAndTittle()
                 .clickFooterPrivacyLinksAndVerifyUrlAndTittle()
                 .clickFooterAccessibilityLinksAndVerifyUrlAndTittle()
+                .clickFooterCreditCardLogoVerifyUrlAndTittle()
+                .clickFooterLearMoreApplyNowAndVerifyUrlAndTittle()
+                .clickFooterManageMyCardLinkVerifyURL()
                 .clickFooterDoNotCookieAndVerify()
                 .clickFooterTermsofUseLinksAndVerifyUrlAndTittle()
                 .navigateToContactUsPage();
-
+//
         contactUsPageForm
                 .clickFooterContactUsPageAndVerifyUrlAndTittle()
                 .verifyRequiredFieldsContactUsform()
@@ -57,22 +63,26 @@ public class RossStores extends BaseTest{
                 .createFormTopicRealEstate()
                 .createFormTopicOther()
                 .navigateToFoundInStore();
-
+//
         foundInStorePage
                 .clickFoundInStoreLinkAndVerifyUrlAndTittle()
                 .verifyTittlesAndTexts()
-                .clickFoundInStoreSelectAllFromDropdown()
-                .clickFoundInStoreSelectMenFromDropdown()
-                .clickFoundInStoreSelectLadiesFromDropdown()
-                .clickFoundInStoreSelectKidsFromDropdown()
-                .clickFoundInStoreSelectShoesFromDropdown()
-                .clickFoundInStoreSelectHomeFromDropdown()
-                .clickFoundInStoreSelectMoreFromDropdown()
+                .clickFoundInStoreSelectAllImages()
+                .clickFoundInStoreSelectFashionImages()
+                .clickFoundInStoreSelectHomeImages()
+                .clickFoundInStoreSelectLifestyleImages()
                 .navigateToStoreLocatorPage();
-
+//
         storeLocatorPage
-                .verifyStoreLocatorPage();
+                .verifyStoreLocatorPage()
+                .navigateToCreditCardPage();
 
+        creditCardPage
+                .verifyCreditCardPageTittleUrl()
+                .verifyCreditCardPageTextsAndTittle()
+                .verifyCreditCardPageAllLinks()
+                .verifyCreditCardPageAllImages()
+                .verifyCreditCardPageFAQs();
 
     }
 }

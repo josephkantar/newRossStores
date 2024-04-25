@@ -2,10 +2,7 @@ package com.rossstores.tests;
 
 
 import com.rossstores.driver.DriverManager;
-import com.rossstores.pages.ContactUsPageForm;
-import com.rossstores.pages.FoundInStorePage;
-import com.rossstores.pages.HomePage;
-import com.rossstores.pages.StoreLocatorPage;
+import com.rossstores.pages.*;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -19,6 +16,7 @@ public class BaseTest {
    ContactUsPageForm contactUsPageForm;
    FoundInStorePage foundInStorePage;
    StoreLocatorPage storeLocatorPage;
+   CreditCardPage creditCardPage;
 
     @BeforeMethod
 
@@ -29,6 +27,7 @@ public class BaseTest {
         foundInStorePage =new FoundInStorePage(DriverManager.getDriver());
         contactUsPageForm =new ContactUsPageForm(DriverManager.getDriver());
         storeLocatorPage = new StoreLocatorPage(DriverManager.getDriver());
+        creditCardPage = new CreditCardPage(DriverManager.getDriver());
     }
 
     @AfterMethod
