@@ -18,6 +18,7 @@
         <allure.version>2.24.0</allure.version>
     </properties>
 
+
     <dependencies>
 
         <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
@@ -34,6 +35,12 @@
             <artifactId>selenium-java</artifactId>
             <version>4.18.1</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>5.5.2</version>
         </dependency>
 
 
@@ -65,6 +72,13 @@
             <artifactId>hamcrest</artifactId>
             <version>2.2</version>
             <scope>test</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>2.27.0</version>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>
