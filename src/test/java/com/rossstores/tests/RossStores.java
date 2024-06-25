@@ -9,8 +9,8 @@ import org.testng.annotations.Test;
 public class RossStores extends BaseTest{
 
     @Severity(SeverityLevel.CRITICAL)
-    @Step("Ddsdiscount test")
-    @Test(testName = "DDsDiscounts Page",retryAnalyzer = RetryAnalyzer.class)
+    @Step("RossStore UI test")
+    @Test(testName = "RossStore Page",retryAnalyzer = RetryAnalyzer.class)
 
     public void testRossStores() throws InterruptedException {
 
