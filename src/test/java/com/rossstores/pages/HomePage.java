@@ -43,7 +43,7 @@ public class HomePage extends BasePage {
 
     //HOMEPAGE IMAGE
 
-    @FindBy(xpath = "//span[contains(text(),'Hurry in for all your warm-weather essentials!')]")
+    @FindBy(xpath = "//p[contains(text(),'Save on everything you need to make your space ama')]")
     private WebElement homePageModule1Image1Text;
     @FindBy(xpath = "//div[@class='slide-image-1']")
     private WebElement homePageModule1Image2;
@@ -77,15 +77,15 @@ public class HomePage extends BasePage {
 
      //GET INSPIRED IMAGES
 
-    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/06/Dino-Snorkle.jpg']")
+    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/08/Colorful-Razors.jpg']")
     private WebElement getInspiredImage1;
-    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/06/Pool-Game.jpg']")
+    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/08/Facial-Wipes.jpg']")
     private WebElement getInspiredImage2;
-    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/06/Swim-Goggles.jpg']")
+    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/08/Hair-Clips.jpg']")
     private WebElement getInspiredImage3;
-    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/06/Shark-Pool-Toys-.jpg']")
+    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/08/Scalp-Massager.jpg']")
     private WebElement getInspiredImage4;
-    @FindBy(xpath = "//h2[contains(text(),'Swim-tastic Finds!')]")
+    @FindBy(xpath = "//h2[contains(text(),'FOUND IN STORE: COLLEGE ESSENTIALS!')]")
     private WebElement getInspiredModuleTittle;
     @FindBy(xpath = "//p[contains(text(),'Tag your instagram posts with @rossdressforless an')]")
     private WebElement getInspiredModuleText;
