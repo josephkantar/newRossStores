@@ -43,7 +43,7 @@ public class HomePage extends BasePage {
 
     //HOMEPAGE IMAGE
 
-    @FindBy(xpath = "//p[contains(text(),'You could win an exclusive shopping getaway.')]")
+    @FindBy(xpath = "//p[contains(text(),'Save on outerwear that’s just your style.')]")
     private WebElement homePageModule1Image1Text;
     @FindBy(xpath = "//div[@class='slide-image-1']")
     private WebElement homePageModule1Image2;
@@ -77,15 +77,15 @@ public class HomePage extends BasePage {
 
      //GET INSPIRED IMAGES
 
-    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/09/Fall-Shoe-End-Cap.jpg']")
+    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/10/Gingerbread-House.jpg']")
     private WebElement getInspiredImage1;
-    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/09/Silver-Kitten-heels.jpg']")
+    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/10/SnowMan_Top-Hat.jpg']")
     private WebElement getInspiredImage2;
-    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/09/Large-end-cap-of-shoes.jpg']")
+    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/10/Gingerbread-Tree.jpg']")
     private WebElement getInspiredImage3;
-    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/09/Black-Rivet-Heels.jpg']")
+    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/10/SnowMan.jpg']")
     private WebElement getInspiredImage4;
-    @FindBy(xpath = "//h2[contains(text(),'FOUND IN STORE: The Latest in Fall Footwear!')]")
+    @FindBy(xpath = "//h2[contains(text(),'FOUND IN STORE: The Cutest Holiday Décor!')]")
     private WebElement getInspiredModuleTittle;
     @FindBy(xpath = "//p[contains(text(),'Tag your instagram posts with @rossdressforless an')]")
     private WebElement getInspiredModuleText;
@@ -122,7 +122,7 @@ public class HomePage extends BasePage {
     private WebElement footerCareers;
     @FindBy(xpath = "//li[@id='menu-item-154']//a[@href='https://corp.rossstores.com/responsibility']")
     private WebElement footerSocialResponsibility;
-    @FindBy(xpath = "//li[@id='menu-item-741']//a[@href='https://corp.rossstores.com/responsibility/empowering-our-associates/our-commitment-to-diversity/']")
+    @FindBy(xpath = "//a[contains(text(),'Diversity, Equality & Inclusion')]")
     private WebElement footerDiversityEI;
     @FindBy(xpath = "//li[@id='menu-item-155']//a[@href='https://investors.rossstores.com/']")
     private WebElement footerGiftCard;
@@ -1061,8 +1061,8 @@ public class HomePage extends BasePage {
         for (String windowHandle : handles1) {
             if (!windowHandle.equals(parentWindow1)) {
                 driver.switchTo().window(windowHandle);
-                Assert.assertEquals(DriverManager.getDriver().getCurrentUrl(), "https://corp.rossstores.com/responsibility/empowering-our-associates/our-commitment-to-diversity/");
-                assertThat(DriverManager.getDriver().getTitle(), containsString("Our Commitment to Diversity, Equality, and Inclusion"));
+                Assert.assertEquals(DriverManager.getDriver().getCurrentUrl(), "https://inclusion.rossstores.com/");
+                assertThat(DriverManager.getDriver().getTitle(), containsString("Ross Stores, Inc."));
 
             }
         }
