@@ -43,7 +43,7 @@ public class HomePage extends BasePage {
 
     //HOMEPAGE IMAGE
 
-    @FindBy(xpath = "//p[contains(text(),'Save on outerwear that’s just your style.')]")
+    @FindBy(xpath = "//p[contains(text(),'Spread more holiday cheer for less.')]")
     private WebElement homePageModule1Image1Text;
     @FindBy(xpath = "//div[@class='slide-image-1']")
     private WebElement homePageModule1Image2;
@@ -77,15 +77,15 @@ public class HomePage extends BasePage {
 
      //GET INSPIRED IMAGES
 
-    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/10/Gingerbread-House.jpg']")
+    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/11/Nutcrakers.jpg']")
     private WebElement getInspiredImage1;
-    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/10/SnowMan_Top-Hat.jpg']")
+    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/11/Santa-Snow-globe.jpg']")
     private WebElement getInspiredImage2;
-    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/10/Gingerbread-Tree.jpg']")
+    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/11/Gingerbread-Decor.jpg']")
     private WebElement getInspiredImage3;
-    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/10/SnowMan.jpg']")
+    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/11/Penguin-Snow-Globe.jpg']")
     private WebElement getInspiredImage4;
-    @FindBy(xpath = "//h2[contains(text(),'FOUND IN STORE: The Cutest Holiday Décor!')]")
+    @FindBy(xpath = "//h2[contains(text(),'FOUND IN STORE: HOLIDAY CHEER!')]")
     private WebElement getInspiredModuleTittle;
     @FindBy(xpath = "//p[contains(text(),'Tag your instagram posts with @rossdressforless an')]")
     private WebElement getInspiredModuleText;
