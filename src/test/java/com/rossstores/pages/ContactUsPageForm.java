@@ -35,7 +35,7 @@ public class ContactUsPageForm extends BasePage {
 
     @FindBy(xpath = "//span[contains(text(),'General Return Policy')]")
     private WebElement faqQuestion1;
-    @FindBy(xpath = "//span[contains(text(),'Fine Jewelry, Swimwear and Lingerie Return Policy')]")
+    @FindBy(xpath = "//p[contains(text(),'For merchandise (not used, worn, or altered) accom')]")
     private WebElement faqQuestion2;
     @FindBy(xpath = "//span[contains(text(),'What is the difference between the Ross Mastercard')]")
     private WebElement faqQuestion3;
@@ -207,7 +207,7 @@ public class ContactUsPageForm extends BasePage {
         System.out.println("question1 is displayed " + question2);
         jsScrollClick(faqQuestion2);
         Thread.sleep(1000);
-        boolean faqAnswer2  = driver.findElement(By.xpath("//p[contains(text(),'The Fine Jewelry return policy is the same as the ')]")).isDisplayed();
+        boolean faqAnswer2  = driver.findElement(By.xpath("//p[contains(text(),'For merchandise (not used, worn, or altered) accom')]")).isDisplayed();
         System.out.println("faqAnswer2 Text is displayed " + faqAnswer2);
 
 

@@ -88,7 +88,7 @@ public class CreditCardPage extends BasePage {
     private WebElement footerEmailSignUpSection;
     @FindBy(xpath = "//div[@id='mainfooter']")
     private WebElement pageFooter;
-    @FindBy(xpath = "//p[contains(text(),'©2024 Ross Stores, Inc. All rights reserved. All m')]")
+    @FindBy(xpath = "//p[contains(text(),'©2025 Ross Stores, Inc. All rights reserved. All m')]")
     private WebElement pageFooterText1;
     @FindBy(xpath = "//span[contains(text(),'800‑335‑1115')]")
     private WebElement pageFooterText2;

@@ -43,7 +43,7 @@ public class HomePage extends BasePage {
 
     //HOMEPAGE IMAGE
 
-    @FindBy(xpath = "//p[contains(text(),'Spread more holiday cheer for less.')]")
+    @FindBy(xpath = "//p[contains(text(),'Visit a Ross Store today to donate to your local B')]")
     private WebElement homePageModule1Image1Text;
     @FindBy(xpath = "//div[@class='slide-image-1']")
     private WebElement homePageModule1Image2;
@@ -77,15 +77,15 @@ public class HomePage extends BasePage {
 
      //GET INSPIRED IMAGES
 
-    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/11/Nutcrakers.jpg']")
+    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2025/02/OceanSalt_620x620.jpg']")
     private WebElement getInspiredImage1;
-    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/11/Santa-Snow-globe.jpg']")
+    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2025/02/Harmony_Oil_Diffusser_620x620.jpg']")
     private WebElement getInspiredImage2;
-    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/11/Gingerbread-Decor.jpg']")
+    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2025/02/Mango_Tangerine_620x620.jpg']")
     private WebElement getInspiredImage3;
-    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2024/11/Penguin-Snow-Globe.jpg']")
+    @FindBy(xpath = "//img[@src='https://www.rossstores.com/wp-content/uploads/2025/02/Serenity_Oil_diffuser_620x620-1.jpg']")
     private WebElement getInspiredImage4;
-    @FindBy(xpath = "//h2[contains(text(),'FOUND IN STORE: HOLIDAY CHEER!')]")
+    @FindBy(xpath = "//h2[contains(text(),'Found In Store: Fabulous Home Fragrances!')]")
     private WebElement getInspiredModuleTittle;
     @FindBy(xpath = "//p[contains(text(),'Tag your instagram posts with @rossdressforless an')]")
     private WebElement getInspiredModuleText;
@@ -110,7 +110,7 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//div[@id='mainfooter']")
     private WebElement pageFooter;
-    @FindBy(xpath = "//p[contains(text(),'©2024 Ross Stores, Inc. All rights reserved. All m')]")
+    @FindBy(xpath = "//p[contains(text(),'©2025 Ross Stores, Inc. All rights reserved. All m')]")
     private WebElement footerText1;
     @FindBy(xpath = "//span[contains(text(),'800‑335‑1115')]")
     private WebElement footerText2;
@@ -225,7 +225,7 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "//span[contains(text(),'General Return Policy')]")
     private WebElement faqQuestion1;
-    @FindBy(xpath = "//span[contains(text(),'Fine Jewelry, Swimwear and Lingerie Return Policy')]")
+    @FindBy(xpath = "//p[contains(text(),'For merchandise (not used, worn, or altered) accom')]")
     private WebElement faqQuestion2;
     @FindBy(xpath = "//span[contains(text(),'What is the difference between the Ross Mastercard')]")
     private WebElement faqQuestion3;
@@ -1286,8 +1286,7 @@ public class HomePage extends BasePage {
         WebElement TermOfUseText1 = driver.findElement(By.xpath("//p[contains(text(),'Welcome to the Ross Stores, Inc. (together with it')]"));
         System.out.println(TermOfUseText1.getText());
 
-        boolean termOfUseDDSLogos = driver.findElement(By.xpath("//img[@src='https://www.rossstores.com/wp-content/uploads/2021/04/legal-logos.svg']")).isDisplayed();
-        System.out.println(termOfUseDDSLogos + " printPageButton is  displayed");
+
 
         WebElement termofUseTittle1= driver.findElement(By.xpath("//span[contains(text(),'1. Use of Copyrighted Contents and Trademarks')]"));
         System.out.println(termofUseTittle1.getText());
